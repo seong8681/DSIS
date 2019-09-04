@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Kanna (5.0.0)
+  - SwiftLint (0.35.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - Kanna (~> 5.0.0)
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kanna
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
+
+PODFILE CHECKSUM: 3917b3221e1d23f25a561699d778ee1ee0e50eb6
+
+COCOAPODS: 1.7.5

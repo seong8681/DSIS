@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56E496FF87B204F6CE683981 /* Pods_DSIS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D44DD7D3B9D99EE8E55BD8 /* Pods_DSIS.framework */; };
+		C1105E25231FE7DB00012F3A /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1105E24231FE7DB00012F3A /* ScheduleViewController.swift */; };
+		C1105E27231FE7E800012F3A /* utill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1105E26231FE7E800012F3A /* utill.swift */; };
 		C177C2A3231FE6DE00775FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177C2A2231FE6DE00775FDA /* AppDelegate.swift */; };
 		C177C2A5231FE6DE00775FDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C177C2A4231FE6DE00775FDA /* ViewController.swift */; };
 		C177C2A8231FE6DE00775FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C177C2A6231FE6DE00775FDA /* Main.storyboard */; };
@@ -16,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37D44DD7D3B9D99EE8E55BD8 /* Pods_DSIS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSIS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B272A5A6245DDC408124CE8D /* Pods-DSIS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSIS.debug.xcconfig"; path = "Target Support Files/Pods-DSIS/Pods-DSIS.debug.xcconfig"; sourceTree = "<group>"; };
+		C1105E24231FE7DB00012F3A /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		C1105E26231FE7E800012F3A /* utill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utill.swift; sourceTree = "<group>"; };
 		C177C29F231FE6DE00775FDA /* DSIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C177C2A2231FE6DE00775FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C177C2A4231FE6DE00775FDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +31,7 @@
 		C177C2AC231FE6E000775FDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C177C2AF231FE6E000775FDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C177C2B1231FE6E000775FDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA7A983B66F3855419AA1CA7 /* Pods-DSIS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSIS.release.xcconfig"; path = "Target Support Files/Pods-DSIS/Pods-DSIS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E496FF87B204F6CE683981 /* Pods_DSIS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66C664FB8AB966941AEB0A8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37D44DD7D3B9D99EE8E55BD8 /* Pods_DSIS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B71B0B66161DF6EA19344D9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B272A5A6245DDC408124CE8D /* Pods-DSIS.debug.xcconfig */,
+				CA7A983B66F3855419AA1CA7 /* Pods-DSIS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C1105E23231FE7CA00012F3A /* 학사일정 */ = {
+			isa = PBXGroup;
+			children = (
+				C1105E24231FE7DB00012F3A /* ScheduleViewController.swift */,
+			);
+			name = "학사일정";
+			path = "학사일정";
+			sourceTree = "<group>";
+		};
 		C177C296231FE6DE00775FDA = {
 			isa = PBXGroup;
 			children = (
 				C177C2A1231FE6DE00775FDA /* DSIS */,
 				C177C2A0231FE6DE00775FDA /* Products */,
+				B71B0B66161DF6EA19344D9B /* Pods */,
+				66C664FB8AB966941AEB0A8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +93,8 @@
 		C177C2A1231FE6DE00775FDA /* DSIS */ = {
 			isa = PBXGroup;
 			children = (
+				C1105E26231FE7E800012F3A /* utill.swift */,
+				C1105E23231FE7CA00012F3A /* 학사일정 */,
 				C177C2A2231FE6DE00775FDA /* AppDelegate.swift */,
 				C177C2A4231FE6DE00775FDA /* ViewController.swift */,
 				C177C2A6231FE6DE00775FDA /* Main.storyboard */,
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C177C2B4231FE6E000775FDA /* Build configuration list for PBXNativeTarget "DSIS" */;
 			buildPhases = (
+				6C34B121832F6D34E7917A38 /* [CP] Check Pods Manifest.lock */,
 				C177C29B231FE6DE00775FDA /* Sources */,
 				C177C29C231FE6DE00775FDA /* Frameworks */,
 				C177C29D231FE6DE00775FDA /* Resources */,
+				ECB2CC57F5FC997415D2A05D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +174,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C34B121832F6D34E7917A38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DSIS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECB2CC57F5FC997415D2A05D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSIS/Pods-DSIS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSIS/Pods-DSIS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DSIS/Pods-DSIS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C177C29B231FE6DE00775FDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,6 +224,8 @@
 				C177C2A5231FE6DE00775FDA /* ViewController.swift in Sources */,
 				C177C2AB231FE6DE00775FDA /* DSIS.xcdatamodeld in Sources */,
 				C177C2A3231FE6DE00775FDA /* AppDelegate.swift in Sources */,
+				C1105E27231FE7E800012F3A /* utill.swift in Sources */,
+				C1105E25231FE7DB00012F3A /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +369,7 @@
 		};
 		C177C2B5231FE6E000775FDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B272A5A6245DDC408124CE8D /* Pods-DSIS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +387,7 @@
 		};
 		C177C2B6231FE6E000775FDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA7A983B66F3855419AA1CA7 /* Pods-DSIS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
