@@ -57,8 +57,8 @@ class SchduleViewController : UIViewController {
         view.addSubview(backButton)
         
         background.frame = CGRect(x: 0, y: navigationBar.frame.height, width: view.frame.width, height: view.frame.height - navigationBar.frame.height)
-        background.backgroundColor = .white
-        background.contentSize.height = (95.5 * 12) + (20 * 12) + 60
+        background.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
+        background.contentSize.height = (90 * 18) + (20 * 12) + 60
         view.addSubview(background)
     }
     
@@ -90,30 +90,74 @@ class SchduleViewController : UIViewController {
     }
     
     func viewSchedule() {
-        let contentColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)
-        let Height : CGFloat = 95.5, Width = self.view.frame.width / 8
+        let Width = self.view.frame.width / 8
         let month = Calendar.current.component(.month, from: .init())
         var i = month - 1, index : Int = 0
         
-        var cal = [UILabel]()
+        var contentView = [UILabel]()
         for _ in 0..<12 {
-            cal.append(UILabel())
+            contentView.append(UILabel())
         }
         
-        for i in 0..<12 {
-            if i != 0 {
-                cal[i].frame = CGRect(x: Width, y: cal[i-1].frame.maxY + 20, width: Width * 6, height: Height)
+        while true {
+            let Height = 90 + CGFloat((ScheduleContent[i].count - 1) * 50);
+            let count = ScheduleContent[i].count
+            if i == month - 1 {
+                contentView[i].frame = CGRect(x: Width, y: 40, width: Width * 6, height: Height)
             }
             else {
-                cal[0].frame = CGRect(x: Width, y: 40, width: Width * 6, height: Height)
+                if i == 0 {
+                    contentView[i].frame = CGRect(x: Width, y: contentView[11].frame.maxY + 20, width: Width * 6, height: Height)
+                }
+                else {
+                    contentView[i].frame = CGRect(x: Width, y: contentView[i-1].frame.maxY + 20, width: Width * 6, height: Height)
+                }
             }
-            cal[i].backgroundColor = contentColor
-            self.background.addSubview(cal[i])
+//            contentView[i].layer.shadowColor = UIColor.black.cgColor
+            contentView[i].layer.shadowRadius = 5.0
+            contentView[i].layer.shadowOpacity = 0.1
+            contentView[i].layer.shadowOffset = CGSize(width: 10, height: 20)
+            contentView[i].layer.masksToBounds = false
+            contentView[i].backgroundColor = .white
+            self.background.addSubview(contentView[i])
+            if count != 0 { // 일정이 있는경우
+                for cnt in 0..<count {
+                    let textLabel = UILabel()
+                    textLabel.frame = CGRect(x: layoutMargin, y: 20 + (CGFloat(cnt) * 50), width: contentView[i].frame.width-32, height: 50)
+                    textLabel.backgroundColor = .clear
+                    contentView[i].addSubview(textLabel)
+                    let date = UITextView()
+                    date.frame = CGRect(x: 0, y: 0, width: contentView[i].frame.width-32, height: 25)
+                    date.isEditable = false
+                    date.isScrollEnabled = false
+                    date.font = UIFont.boldSystemFont(ofSize: 13)
+                    date.backgroundColor = .clear
+                    date.text = "\(ScheduleContent[i][cnt].date) : "
+                    let cal = UITextView()
+                    cal.frame = CGRect(x: 0, y: date.frame.maxY, width: contentView[i].frame.width-32, height: 25)
+                    cal.isEditable = false
+                    cal.isScrollEnabled = false
+                    cal.font = UIFont.systemFont(ofSize: 13)
+                    cal.backgroundColor = .clear
+                    cal.text = "\(ScheduleContent[i][cnt].calendar)"
+                    textLabel.addSubview(date)
+                    textLabel.addSubview(cal)
+                }
+            }
+            else { // 일정이 없는경우
+                let text = UITextView()
+                text.frame = CGRect(x: layoutMargin, y: 5, width: contentView[i].frame.width-32, height: 35)
+                text.font = UIFont.boldSystemFont(ofSize: 13)
+                text.isEditable = false
+                text.isScrollEnabled = false
+                text.text = "일정 없음!"
+                contentView[i].addSubview(text)
+            }
+            i += 1
+            i %= 12
+            if i == month - 1 {
+                break
+            }
         }
-//        while true {
-//            let cal = [UILabel]()
-//            let content = UITextView()
-//            content.frame = CGRect(x: self.view.frame.width / 8, y: 40 + (CGRect(i) * Height), width: self.view.frame, height: <#T##CGFloat#>)
-//        }
     }
 }
